@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng Tháp - Đất Sen Hồng</title>
+    <!-- Tích hợp Tailwind CSS để giao diện chuyên nghiệp và Clean -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lotus: '#e83e8c', // Màu hồng hoa sen
+                        lotusDark: '#c2185b',
+                        leaf: '#2ecc71',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Tích hợp Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Hiệu ứng kính mờ (Glassmorphism) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        
+        /* Hiệu ứng hover cho thẻ Card */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Ẩn thanh cuộn nhưng vẫn cuộn được */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-lotus selection:text-white">
+
+    <!-- Header / Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-panel w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-8 h-8 text-lotus" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.5a.5.5 0 0 1 .5.5v18a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5zM6.5 7a.5.5 0 0 1 .4.2l5 6a.5.5 0 0 1-.78.62l-5-6A.5.5 0 0 1 6.5 7zm11 0a.5.5 0 0 1 .38.82l-5 6a.5.5 0 1 1-.76-.64l5-6a.5.5 0 0 1 .38-.18z"/></svg>
+                        <span class="font-bold text-xl tracking-tight text-gray-900">DongThap<span class="text-lotus">Tour</span></span>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-lotus font-medium transition">Trang chủ</a>
+                        <a href="#verify" class="text-gray-700 hover:text-lotus font-medium transition">Xác minh</a>
+                        <a href="#destinations" class="text-gray-700 hover:text-lotus font-medium transition">Điểm đến</a>
+                        <a href="#media" class="text-gray-700 hover:text-lotus font-medium transition">Trải nghiệm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Sử dụng hình ảnh hoa sen Đồng Tháp -->
+            <img src="https://images.unsplash.com/photo-1543880402-0a86d26dff06?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Hoa sen Đồng Tháp" class="w-full h-full object-cover filter brightness-50" />
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="block text-lotus font-semibold tracking-wider uppercase mb-3 drop-shadow-md">Tuyệt tác thiên nhiên</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg leading-tight">Khám Phá Vẻ Đẹp<br>Đất Sen Hồng</h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto drop-shadow-md">
+                Sản phẩm truyền thông đa phương tiện giới thiệu những danh lam thắng cảnh nổi tiếng tại Đồng Tháp.
+            </p>
+            <a href="#verify" class="inline-block bg-lotus hover:bg-lotusDark text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                Bắt đầu hành trình
+            </a>
+        </div>
+    </section>
+
+    <!-- Phần Xác Minh Bắt Buộc (Theo yêu cầu của GV) -->
+    <section id="verify" class="py-16 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden bg-gradient-to-br from-pink-50 to-white border-l-4 border-lotus">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-24 h-24 bg-lotus/10 rounded-full flex items-center justify-center text-lotus">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Phần Ghi Âm Xác Minh</h2>
+                        <p class="text-gray-600 mb-4">Sản phẩm môn Tin học - Chuyên đề truyền thông đa phương tiện</p>
+                        
+                        <!-- Thông tin cá nhân -->
+                        <div class="bg-white px-4 py-3 rounded-xl inline-block shadow-sm mb-4">
+                            <p class="font-medium text-gray-800">👤 Họ và tên: <span class="text-lotus font-bold">[Điền tên của bạn]</span></p>
+                            <p class="font-medium text-gray-800 mt-1">🏫 Lớp: <span class="text-lotus font-bold">[Điền lớp]</span></p>
+                        </div>
+
+                        <p class="italic text-gray-500 mb-4 text-sm">"Đây là sản phẩm do chính em thực hiện"</p>
+                        
+                        <!-- TRÌNH PHÁT AUDIO -->
+                        <!-- HD: Đổi 'giong_doc_cua_ban.mp3' thành tên file ghi âm thực tế của bạn -->
+                        <audio controls class="w-full h-12 shadow-sm rounded-full outline-none">
+                            <source src="giong_doc_cua_ban.mp3" type="audio/mpeg">
+                            Trình duyệt của bạn không hỗ trợ thẻ audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Danh lam thắng cảnh (Đa phương tiện: Hình ảnh + Văn bản) -->
+    <section id="destinations" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Danh Lam Thắng Cảnh</h2>
+                <div class="w-24 h-1 bg-lotus mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Khám phá những địa danh làm nên tên tuổi của vùng đất hiền hòa, trù phú.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="relative h-60">
+                        <img src="https://images.unsplash.com/photo-1593006509618-c2bda7bc3bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vườn Quốc Gia Tràm Chim" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-leaf">
+                            Thiên Nhiên
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Vườn Quốc Gia Tràm Chim</h3>
+                        <p class="text-gray-600 line-clamp-3 text-sm">Khu Ramsar thứ 4 của Việt Nam, nơi có hệ sinh thái đất ngập nước tuyệt đẹp và là "nhà" của loài Sếu Đầu Đỏ quý hiếm.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="relative h-60">
+                        <img src="https://images.unsplash.com/photo-1550616142-d667c4b1248a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Làng Hoa Sa Đéc" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-lotus">
+                            Văn Hóa
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Làng Hoa Sa Đéc</h3>
+                        <p class="text-gray-600 line-clamp-3 text-sm">Thủ phủ hoa lớn nhất miền Tây. Nơi đây trồng hàng ngàn loài hoa khoe sắc quanh năm, đặc biệt rực rỡ vào dịp Tết nguyên đán.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="relative h-60">
+                        <img src="https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Khu Di Tích Xẻo Quýt" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-600">
+                            Lịch Sử
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Khu Di Tích Xẻo Quýt</h3>
+                        <p class="text-gray-600 line-clamp-3 text-sm">Căn cứ Cách mạng với rừng tràm nguyên sinh mát rượi. Bạn có thể ngồi xuồng ba lá len lỏi qua những con rạch nhỏ tuyệt đẹp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Trải Nghiệm (Đa phương tiện: Video) -->
+    <section id="media" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-900 rounded-3xl overflow-hidden shadow-2xl relative">
+                <div class="p-8 md:p-12 text-center text-white">
+                    <h2 class="text-3xl font-bold mb-4">Video Giới Thiệu (1 - 3 Phút)</h2>
+                    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Mời thầy/cô và các bạn cùng xem đoạn video ngắn tổng hợp những khung cảnh hùng vĩ và bình dị nhất của quê hương Đồng Tháp.</p>
+                    
+                    <!-- TRÌNH PHÁT VIDEO -->
+                    <!-- HD: Đổi 'video_cua_ban.mp4' thành tên file video thực tế của bạn (1-3 phút) -->
+                    <div class="aspect-w-16 aspect-h-9 bg-black rounded-xl overflow-hidden shadow-lg border border-gray-800">
+                        <video controls class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1543880402-0a86d26dff06?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                            <source src="video_cua_ban.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ thẻ video.
+                        </video>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">* Đảm bảo video có thời lượng từ 1 đến 3 phút theo yêu cầu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <svg class="w-6 h-6 text-lotus" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.5a.5.5 0 0 1 .5.5v18a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5zM6.5 7a.5.5 0 0 1 .4.2l5 6a.5.5 0 0 1-.78.62l-5-6A.5.5 0 0 1 6.5 7zm11 0a.5.5 0 0 1 .38.82l-5 6a.5.5 0 1 1-.76-.64l5-6a.5.5 0 0 1 .38-.18z"/></svg>
+                <span class="font-bold text-lg text-gray-900">DongThap<span class="text-lotus">Tour</span></span>
+            </div>
+            <p class="text-gray-500 text-sm mb-2">Sản phẩm thực hành môn Tin học 12</p>
+            <p class="text-gray-400 text-sm">© 2026 Thực hiện bởi <span class="font-semibold text-gray-600">[Tên của bạn]</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script tạo hiệu ứng khi cuộn trang -->
+    <script>
+        // Tự động dừng Audio nếu Video đang phát
+        const audios = document.querySelectorAll('audio');
+        const videos = document.querySelectorAll('video');
+
+        videos.forEach(video => {
+            video.addEventListener('play', () => {
+                audios.forEach(audio => audio.pause());
+            });
+        });
+
+        audios.forEach(audio => {
+            audio.addEventListener('play', () => {
+                videos.forEach(video => video.pause());
+            });
+        });
+    </script>
+</body>
+</html>
